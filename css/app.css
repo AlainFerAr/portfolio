@@ -157,13 +157,18 @@ body {
 }
 .seccion .ul .a{
     border:1px solid rgba(255, 255, 255, .4);
-    padding: 1em 1em 1em;
     text-transform: uppercase;
     font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: color-mix(in srgb, white, transparent 80%);
+    backdrop-filter: blur(3px);
     transition: all .5s ease;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 .seccion .ul .a:hover{
-    border-color: black;
+    background: color-mix(in srgb, white, transparent 20%);
+    
 }
 .seccion .h2{
     font-family: var(--tipo-titulo);
@@ -173,13 +178,11 @@ body {
 .seccion .h3{
     font-family: var(--tipo-titulo);
     font-size: 3em;
-    font-style: italic;
 }
 .seccion .p{}
 .seccion .grid{
     width: 90%;
     max-width: 40em;
-    background: lightcoral;
     margin: 1em 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
@@ -188,13 +191,12 @@ body {
 .seccion .article{
     width: 100%;
     min-height: 20vh;
-    background: lightgoldenrodyellow;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     position: relative;
-
+    overflow: hidden;
 }
 .seccion .a{}
 .seccion .figure{
@@ -208,7 +210,8 @@ body {
 .seccion .h4{
     width: 100%;
     height: 100%;
-    background-color: var(--blanco);
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(1rem);
     position: absolute;
     bottom: 0;
     left: 0;
@@ -216,7 +219,16 @@ body {
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+    color: white;
+    font-size: 1.2em;
+    font-family: var(--tipo-titulo);
+    text-transform: uppercase;
+    opacity: 0;
+    transition: all .5s ease;
 }
+.seccion .h4:hover{
+    opacity: 1;
+} 
 .proyectos .h2{
     margin: 0 0 1rem;
 }
@@ -237,14 +249,12 @@ body {
     align-items: center;
 }
 .about .li{
-    background: orange;
     margin:0 1em;
 }
 .about .a{}
 .about .svg{
     width: 2em;
     height: 2em;
-    background: red;
 }
 
 .footer{
