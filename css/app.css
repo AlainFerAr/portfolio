@@ -230,19 +230,18 @@ body {
     opacity: 1;
 } 
 .proyectos .h2{
-    margin: 0 0 1rem;
+    margin: 0 0 2rem;
 }
 .about{}
 .about .h2{}
 .about .p{
     max-width: 40em;
-    background: lime;
-    margin: 0 0 1em;
+    margin: 0 0 2em;
+    font-size: 1.5em;
     text-align: left;
 }
 .about .rrss{
     width: 100%;
-    background: lightgreen;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -253,8 +252,8 @@ body {
 }
 .about .a{}
 .about .svg{
-    width: 2em;
-    height: 2em;
+    width: 3em;
+    height: 3em;
 }
 
 .footer{
