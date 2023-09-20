@@ -80,7 +80,7 @@ select {
     font-family: inherit;
     font-size: inherit;
     -webkit-hyphens: auto;
-    hyphens:auto;
+    hyphens: auto;
     background-color: transparent;
     display: flex;
     color: inherit;
@@ -99,8 +99,23 @@ body {
 /* 
     CSS
 */
+
+.svg.fondo{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: block;
+    background-color: #0e4166;
+    background-image: linear-gradient(to bottom, rgba(14, 65, 102, 0.86), #0e4166);
+    background-size: cover;
+    z-index: -1;
+}
+
 .header {
-    background: lightblue;
+    color: white;
     width: 100%;
     min-height: 5em;
     padding: 1em 2em;
@@ -108,55 +123,24 @@ body {
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
-    display: none;
+    z-index: 1;
 }
+
 .header .h1 {}
+
 .header .h1 .a {}
+
 .header .nav {}
+
 .header .ul {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
 }
-.header .li{
-    margin: 0 1em;
-}
-.header .li .a{}
 
-.main{
-    background: lightgray;
-    margin: 0 0 1em;
-    text-align: center;
-}
-
-.seccion{
-    width: 100%;
-    min-height: 80vh;
-    background: lightblue;
-    /* margin: 1em 0; */
-    padding: 2em;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-}
-.seccion .info{
-    font-size: 1.2em;
-}
-.seccion .circulos{}
-.seccion .circulo{}
-.seccion .ul{
-    margin: 2EM 0 0;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-}
-.seccion .ul .li{
+.header .li {
     margin: 0 1em;
-}
-.seccion .ul .a{
-    border:1px solid rgba(255, 255, 255, .4);
+    border: 1px solid rgba(255, 255, 255, .4);
     text-transform: uppercase;
     font-weight: 600;
     padding: 10px 20px;
@@ -166,21 +150,78 @@ body {
     transition: all .5s ease;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
-.seccion .ul .a:hover{
+.header .li:hover {
     background: color-mix(in srgb, white, transparent 20%);
-    
+    color: black;
 }
-.seccion .h2{
+
+.header .li .a {}
+
+.main {
+    color: rgb(200, 200, 200);
+    margin: 0 0 1em;
+    text-align: center;
+}
+
+.seccion {
+    width: 100%;
+    min-height: 80vh;
+    /* margin: 1em 0; */
+    padding: 2em;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.seccion .info {
+    font-size: 1.2em;
+}
+
+.seccion .ul {
+    margin: 2EM 0 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.seccion .ul .li {
+    margin: 0 1em;
+}
+
+.seccion .ul .a {
+    border: 1px solid rgba(255, 255, 255, .4);
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: color-mix(in srgb, white, transparent 80%);
+    backdrop-filter: blur(3px);
+    transition: all .5s ease;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.seccion .ul .a:hover {
+    background: color-mix(in srgb, white, transparent 20%);
+    color: black;
+
+}
+
+.seccion .h2 {
     font-family: var(--tipo-titulo);
     font-weight: 600;
     font-size: 5em;
 }
-.seccion .h3{
+
+.seccion .h3 {
     font-family: var(--tipo-titulo);
     font-size: 3em;
 }
-.seccion .p{}
-.seccion .grid{
+
+.seccion .p {}
+
+.seccion .grid {
     width: 90%;
     max-width: 40em;
     margin: 1em 0;
@@ -188,9 +229,11 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     gap: 1em;
 }
-.seccion .article{
+
+.seccion .article {
     width: 100%;
     min-height: 20vh;
+    border-radius: 10px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -198,16 +241,18 @@ body {
     position: relative;
     overflow: hidden;
 }
-.seccion .a{}
-.seccion .figure{
+
+.seccion .a {}
+
+.seccion .figure {
     width: 100%;
-    background-color: red;
 }
-.seccion .img{
+
+.seccion .img {
     width: 100%;
-    background-color: lime;
 }
-.seccion .h4{
+
+.seccion .h4 {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, .5);
@@ -226,41 +271,50 @@ body {
     opacity: 0;
     transition: all .5s ease;
 }
-.seccion .h4:hover{
+
+.seccion .h4:hover {
     opacity: 1;
-} 
-.proyectos .h2{
+}
+
+.proyectos .h2 {
     margin: 0 0 2rem;
 }
-.about{}
-.about .h2{}
-.about .p{
+
+.about {}
+
+.about .h2 {}
+
+.about .p {
     max-width: 40em;
     margin: 0 0 2em;
     font-size: 1.5em;
     text-align: left;
 }
-.about .rrss{
+
+.about .rrss {
     width: 100%;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
 }
-.about .li{
-    margin:0 1em;
+
+.about .li {
+    margin: 0 1em;
 }
-.about .a{}
-.about .svg{
+
+.about .a {}
+
+.about .svg {
     width: 3em;
     height: 3em;
 }
 
-.footer{
-    background-color: lightpink;
+.footer {
+    color: white;
+    background-color: black;
     padding: 2em 0;
     text-align: center;
 }
-.footer .span{
 
-}
+.footer .span {}
