@@ -229,8 +229,9 @@ body {
 
 .seccion .article {
     width: 100%;
-    min-height: 20vh;
+    height: 20vh;
     border-radius: 10px;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -252,7 +253,7 @@ body {
 .seccion .h4 {
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, .6);
     backdrop-filter: blur(1rem);
     position: absolute;
     bottom: 0;
@@ -276,6 +277,30 @@ body {
 .proyectos .h2 {
     margin: 0 0 2rem;
 }
+.proyectos .p {
+    max-width: 40em;
+    margin: 0 0 2em;
+    font-size: 1.5em;
+    font-family: var(--tipo-principal);
+    text-align: left;
+}
+
+.conocimientos .iconos {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.conocimientos .li {
+    margin: 0 1em;
+}
+
+.conocimientos .svg {
+    width: 3em;
+    height: 3em;
+}
 
 /* .about {}
 
@@ -285,6 +310,7 @@ body {
     max-width: 40em;
     margin: 0 0 2em;
     font-size: 1.5em;
+    font-family: var(--tipo-principal);
     text-align: left;
 }
 
