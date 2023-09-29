@@ -91,7 +91,6 @@ body {
     font-size: 100%;
     min-height: 100vh;
     background-color: var(--blanco);
-    font-smooth: always;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -169,6 +168,7 @@ body {
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    margin-top: 0;
 }
 
 .seccion .info {
@@ -190,6 +190,7 @@ body {
 .seccion .ul .a {
     border: 1px solid rgba(255, 255, 255, .4);
     text-transform: uppercase;
+    font-family: var(--tipo-principal);
     font-weight: 600;
     padding: 10px 20px;
     border-radius: 25px;
@@ -216,23 +217,26 @@ body {
     font-size: 3em;
 }
 
-/* .seccion .p {} */
-
 .seccion .grid {
     width: 90%;
     max-width: 40em;
     margin: 1em 0;
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     gap: 1em;
 }
 
 .seccion .article {
     width: 100%;
-    height: 20vh;
+    max-height: 400px;
+    min-width: 0;
     border-radius: 10px;
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;
+    flex: 0 1 calc(50% - 1em);
+    margin: 1em 0;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
@@ -240,14 +244,14 @@ body {
     overflow: hidden;
 }
 
-/* .seccion .a {} */
-
 .seccion .figure {
     width: 100%;
 }
 
 .seccion .img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .seccion .h4 {
@@ -262,8 +266,9 @@ body {
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    color: white;
     font-size: 1.2em;
+    padding: 10px;
+    color: white;
     font-family: var(--tipo-titulo);
     text-transform: uppercase;
     opacity: 0;
@@ -274,9 +279,13 @@ body {
     opacity: 1;
 }
 
+.proyectos {
+}
+
 .proyectos .h2 {
     margin: 0 0 2rem;
 }
+
 .proyectos .p {
     max-width: 40em;
     margin: 0 0 2em;
@@ -285,26 +294,24 @@ body {
     text-align: left;
 }
 
-.conocimientos .iconos {
-    width: 100%;
+.iconos {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.conocimientos .li {
-    margin: 0 1em;
+.iconos svg {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
 }
 
-.conocimientos .svg {
-    width: 3em;
-    height: 3em;
+@media screen and (max-width: 768px) {
+    .iconos svg {
+        width: 50px;
+        height: 50px;
+    }
 }
-
-/* .about {}
-
-.about .h2 {} */
 
 .about .p {
     max-width: 40em;
@@ -314,8 +321,29 @@ body {
     text-align: left;
 }
 
+.about .button {
+    margin: 0 0 2em;
+    border: 1px solid rgba(255, 255, 255, .4);
+    font-family: var(--tipo-principal);
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: color-mix(in srgb, white, transparent 80%);
+    backdrop-filter: blur(3px);
+    transition: all .5s ease;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.about .button:hover {
+    background: color-mix(in srgb, white, transparent 20%);
+    color: black;
+
+}
+
 .about .rrss {
     width: 100%;
+    margin: 0 0 2em;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -339,8 +367,6 @@ body {
     padding: 2em 0;
     text-align: center;
 }
-
-.footer .span {}
 
 @media screen and (max-width: 600px) {
     .topnav a:not(:first-child) {
@@ -408,8 +434,17 @@ body {
         font-size: 1.2em;
     }
 
-    .about .li {
+    .seccion .rrss {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .seccion .li {
         margin: 0.5em 0;
+    }
+
+    .seccion .a {
+        padding: 8px 16px;
     }
 
     .footer {
